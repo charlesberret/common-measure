@@ -1,0 +1,23 @@
+.DS_Store
+Thumbs.db
+*~
+*.swp
+.idea/
+.vscode/
+*.pyc
+__pycache__/
+
+# Bulk data never belongs in this tree
+data/derived/
+data/enriched/
+data/raw/
+*.parquet
+*.feather
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Local notes
+.env
+.env.*
+*.local.md

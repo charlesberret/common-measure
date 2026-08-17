@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: Common Measure
+message: >-
+  This project has not issued a citable data release yet.
+  Prefer the crawl-month citation in docs/citation.md once
+  a dataset is deposited. Until then, cite this repository
+  as a draft project description only.
+type: software
+authors:
+  - family-names: Berret
+    given-names: Charles
+    email: charles@charlesberret.net
+abstract: >-
+  Common Measure builds reference data about the visible
+  and technical web, beginning with derived font and CSS
+  structure from public HTTP Archive crawls.
+keywords:
+  - HTTP Archive
+  - web fonts
+  - CSS
+  - web measurement
+  - reference data
+license: CC-BY-4.0
+repository-code: https://github.com/charlesberret/common-measure
+url: https://commonmeasure.io
+date-released: '2026-08-17'
+version: draft

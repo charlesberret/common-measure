@@ -1,0 +1,23 @@
+Common Measure
+Copyright 2026 Charles Berret
+
+This project publishes derived documentation and (later) derived
+datasets. It is not an HTTP Archive publication.
+
+HTTP Archive
+------------
+Measurements described here are derived from public HTTP Archive
+crawl data. HTTP Archive is not a partner or endorser of Common
+Measure. Use HTTP Archive's own terms and citation guidance for
+the raw crawl:
+
+  https://httparchive.org/
+
+Fonts
+-----
+No typeface files are included. Observed family names and vendor
+identifiers are metadata, not a license.
+
+Documentation license
+---------------------
+See LICENSE (CC BY 4.0).
