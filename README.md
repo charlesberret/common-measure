@@ -45,7 +45,7 @@ Bulk extracts and manufacturing code stay out of this tree. This repo is the **f
 ## Principles (short)
 
 1. **Measure in the open; package the labor.** The crawl is public. The work is the validated extract, the dictionary, and the grain.
-2. **Free aggregates earn the right to charge for microdata.** Headline facts should be citable without a invoice.
+2. **Free aggregates earn the right to charge for microdata.** Headline facts should be citable without an invoice.
 3. **Academics and libraries are constituents**, not an afterthought.
 4. **Depth over breadth.** Win on font/CSS structure and joins that install-flag tools omit — not by being a cheaper BuiltWith.
 5. **Always attribute HTTP Archive.** Never claim exclusivity over raw crawl data.
