@@ -7,7 +7,7 @@ This page will be rewritten when the first Structure Index export and free aggre
 
 ## 1. What is measured
 
-Common Measure measures **observed font and CSS structure on HTTP Archive root pages**, rolled up to a **host × client** grain (proposed for v0).
+Common Measure measures **observed font and CSS structure on HTTP Archive root pages**, rolled up to the v0 **host × client** grain.
 
 It does **not** measure:
 
@@ -27,7 +27,7 @@ A “webfont” here means a font file requested in the HA root-page context, cl
 | First target month | July 2026 (`date = 2026-07-01` in HA partitions) |
 | Clients | `desktop` and `mobile` as labeled by HA |
 | Pages | HA **root pages**, not a full-site crawl |
-| Rank | HA popularity rank already attached to those root pages (CrUX-derived upstream). v0 does **not** pull a separate CrUX rank table. |
+| Rank | Bucketed CrUX-style popularity magnitude on HA root pages (not a dense rank). v0 does **not** pull a separate CrUX rank table. |
 
 HTTP Archive documents its own sampling, device definitions, and coverage. Common Measure inherits those limits. See [limitations.md](limitations.md).
 
@@ -51,13 +51,13 @@ Cost discipline is part of method, not just ops: naive repeated scans of the ful
 
 ## 4. Grain
 
-**Proposed v0 grain:** `host` × `client`, where `host` is the network host of the HA root-page URL.
+**v0 grain:** `host` × `client`, where `host` is the network host of the HA root-page URL.
 
 Consequences, stated up front:
 
 - `www.example.com` and `example.com` are different hosts unless later normalized.
 - Shared hosts (`github.io`, app platforms, some CDNs) collapse many sites into one row.
-- Multiple root pages on the same host are collapsed (`OR` for presence flags; quantiles for sizes; `MIN(rank)` for popularity, because in HA a lower rank is more popular).
+- Multiple root pages on the same host are collapsed (`OR` for presence flags; quantiles for sizes; `MIN(rank)` among pages that carry the bucketed magnitude, because in HA a lower value is more popular).
 - eTLD+1 (Public Suffix List) grain is a later refinement, not the first export.
 
 If marketing copy says “origin,” map it carefully: HA pages are URLs; v0 keys are hosts.
@@ -97,7 +97,7 @@ Before calling an export a release:
 
 - row counts vs materialize (every root-page host × client appears once)
 - `has_webfont` vs a known population baseline from the same month
-- rank null rate before any “Lite = top N” cut
+- rank null-rate QA complete per the frozen dictionary (2026-10-06); choosing Lite cutoff `N` remains separate
 - sample domains checked by hand (self / Google / none)
 - CSS columns isolated so their cost and error modes are visible
 - every file carries crawl date, client(s), product version, HA attribution, license
