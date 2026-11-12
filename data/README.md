@@ -13,13 +13,15 @@ This directory is the **public shelf**: dictionaries now, pointers to released s
 
 A release should give you, at minimum:
 
-- crawl month and clients
-- product name and dictionary revision
+- crawl month and client(s)
+- Common Measure product name and dictionary revision
 - grain and universe / denominator
-- license
-- HTTP Archive attribution ([docs/attribution.md](../docs/attribution.md))
-- a checksum
-- a short known-limitations pointer
+- license line (free vs paid, as applicable)
+- HTTP Archive attribution: name the crawl month and state that the numbers are **derived from HTTP Archive** public data ([docs/attribution.md](../docs/attribution.md))
+- packaging and dictionary credit to Common Measure (see [docs/attribution.md](../docs/attribution.md))
+- a checksum (e.g. SHA-256) for the delivered file
+- a short pointer to known limitations ([docs/limitations.md](../docs/limitations.md))
+- an explicit sentence that **HTTP Archive is not a partner or endorser** of Common Measure
 
 If a file is missing any of those, it is a preview, not a release.
 
