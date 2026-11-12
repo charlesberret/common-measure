@@ -1,0 +1,26 @@
+name: Docs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lychee
+        run: |
+          LYCHEE_VERSION=lychee-v0.24.2
+          curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" | tar xz
+          echo "$GITHUB_WORKSPACE/lychee-x86_64-unknown-linux-gnu" >> "$GITHUB_PATH"
+
+      - name: Install cffconvert
+        run: pip install cffconvert
+
+      - name: Validate CITATION.cff
+        run: cffconvert --validate -i CITATION.cff
+
+      - name: Check Markdown links (offline)
+        run: lychee --offline --no-progress './**/*.md'
