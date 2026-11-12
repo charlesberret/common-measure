@@ -4,11 +4,7 @@
 
 ## Required on every public Common Measure surface
 
-Use all three ideas, even if the wording shortens:
-
-1. The numbers are **derived from HTTP Archive** public crawl data. Name the month.
-2. The **packaging, grain, and dictionary** are Common Measure’s labor.
-3. **HTTP Archive is not a partner or endorser** of Common Measure.
+Every shipped file must satisfy [data/README.md#when-a-file-appears](../data/README.md#when-a-file-appears). In short: name the crawl month and state HA derivation; credit Common Measure packaging, grain, and dictionary; and include the non-endorsement sentence (**HTTP Archive is not a partner or endorser** of Common Measure).
 
 ### Boilerplate (unapproved)
 

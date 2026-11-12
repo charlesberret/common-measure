@@ -100,7 +100,7 @@ Before calling an export a release:
 - rank null rate before any “Lite = top N” cut
 - sample domains checked by hand (self / Google / none)
 - CSS columns isolated so their cost and error modes are visible
-- every file carries crawl date, client(s), product version, HA attribution, license
+- every file meets the release contract in [data/README.md#when-a-file-appears](../data/README.md#when-a-file-appears)
 
 What will **not** be claimed even after that:
 

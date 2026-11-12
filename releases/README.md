@@ -6,7 +6,7 @@ Each published snapshot will get a directory:
 
 ```text
 releases/structure-index-2026-07-v0/
-  README.md           crawl month, grain, license, SHA-256
+  README.md           release contract fields (see data/README.md#when-a-file-appears)
   METHODOLOGY.md      frozen copy
   dictionary.md       frozen copy
 ```

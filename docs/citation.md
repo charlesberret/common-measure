@@ -46,11 +46,7 @@ If you publish **aggregates you computed** from paid rows, say so, name the craw
 
 ## In-file footer (every future CSV / Parquet / PDF)
 
-1. Crawl month and client(s)
-2. “Derived from HTTP Archive public data”
-3. Common Measure product name + version
-4. License line (free vs paid)
-5. “HTTP Archive is not a partner or endorser of Common Measure”
+Ship the fields in [data/README.md#when-a-file-appears](../data/README.md#when-a-file-appears); do not omit any item there.
 
 ## Citation File Format
 
