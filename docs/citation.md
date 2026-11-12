@@ -9,10 +9,6 @@ If you need to mention Common Measure as a project (not a dataset):
 
 > Charles Berret. *Common Measure* (draft public materials). https://github.com/charlesberret/common-measure
 
-or
-
-> Common Measure. Draft project description. https://commonmeasure.io
-
 There is **no DOI** yet. Do not mint a fake one.
 
 ## HTTP Archive (raw crawl)

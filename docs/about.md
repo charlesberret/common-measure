@@ -67,8 +67,7 @@ Structure Index  (one row per host × client)
 ## Name and surfaces
 
 - **Prose name:** Common Measure (two words)
-- **Candidate site:** [https://commonmeasure.io](https://commonmeasure.io)
-- **This repository:** public materials and, later, release pointers
+- **This repository:** public materials and, later, release pointers (cite here until a public site ships)
 - **Related domains** (registered; roles not frozen): `commonmeasure.dev`, `commonmeasure.net`, `commonmeasuredata.com`
 
 Until a single citation URL is locked, cite the dataset’s deposit (DOI when it exists) plus crawl month. Do not invent three competing canonical homes in a paper.
