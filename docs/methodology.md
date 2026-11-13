@@ -89,7 +89,26 @@ Defined in the [Structure Index dictionary](../data/dictionaries/structure-index
 
 A public number and a paid table that disagree because they used different denominators is a defect. The dictionary must name the universe: all hosts in the month’s root-page set, including those with no webfonts, unless a table says otherwise.
 
-Suppression rules for small cells are **not written yet**. If a civic or country cut can identify a tiny set of hosts, that cut does not ship until a rule exists.
+If a civic or country cut can identify a tiny set of hosts, that cut does not ship until a suppression rule is fixed in the dictionary. The maintainer has not chosen one yet. Reasonable options:
+
+**Minimum count (primary suppression).** Do not publish a cell when the underlying host count (or another stated unit) is below *k*.  
+- *Protects:* sparse cuts where a single domain or a handful of hosts could be singled out from a total or share.  
+- *Costs the reader:* true small populations disappear from tables; zeros and “suppressed” look alike unless labeled; marginal totals can disagree with visible interior cells.  
+- *Source:* [Statistical disclosure control](https://en.wikipedia.org/wiki/Statistical_disclosure_control) (tabulation methods, including primary cell suppression).
+
+**Complementary suppression.** After a small cell is withheld, suppress additional cells in the same row or column so a reader cannot recover the hidden count by subtracting published neighbors.  
+- *Protects:* against inference from table arithmetic when only one cell in a margin is sensitive.  
+- *Costs the reader:* more empty cells than the minimum-count rule alone; layout-dependent suppression can surprise users who expect symmetry across cuts.  
+- *Source:* [Managing statistical confidentiality and microdata access](https://www.ihsn.org/sites/default/files/resources/IHSN-WP004.pdf) (IHSN working paper on disclosure control for aggregate data).
+
+**Rounding (coarsening).** Publish counts rounded to a fixed unit (for example nearest 5 or 10) and apply the same rule to derived rates where feasible.  
+- *Protects:* exact small denominators from appearing in every printed table.  
+- *Costs the reader:* components no longer sum to published marginals; percentages need an explicit rounding policy or they disagree with rounded counts; very small true values may appear as zero.  
+- *Source:* [Disclosure control](https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/disclosurecontrol) (UK Office for National Statistics methodology).
+
+`threshold: not set`
+
+The numeric cutoff (*k*), rounding unit, and any complementary-suppression parameters are for the maintainer to choose and to record in the dictionary when a release ships.
 
 ## 7. Validation (intended)
 
