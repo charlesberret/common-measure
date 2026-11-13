@@ -8,7 +8,7 @@ This is the public list of what Common Measure intends to make from the HTTP Arc
 ## Structure Index
 
 **Role:** master domain-keyed feature table. Other paid cuts are filters or enrichments of this table.  
-**Grain (proposed):** one row per `host` × `client` (`desktop` / `mobile`).  
+**Grain:** one row per `host` × `client` (`desktop` / `mobile`).  
 **Universe:** hosts present on HTTP Archive root pages for the crawl month, **including** hosts with no webfonts.  
 **First target:** July 2026.
 
@@ -29,7 +29,7 @@ Feature families (detail in the [dictionary](../data/dictionaries/structure-inde
 | Full | broader panel |
 | Custom | buyer-supplied domain list, left-joined |
 
-No Lite cutoff is published until rank null-rate is checked.
+**Rank:** bucketed CrUX-style magnitude on HA root pages (not a dense rank). Rank null-rate QA is complete. The Structure Index dictionary was frozen on 2026-10-06. Lite cutoff `N` is not published yet.
 
 ## Free aggregates
 
