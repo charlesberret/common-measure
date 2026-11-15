@@ -17,7 +17,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/lychee"
           curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
             | tar xz -C "$RUNNER_TEMP/lychee"
-          echo "$RUNNER_TEMP/lychee" >> "$GITHUB_PATH"
+          echo "$RUNNER_TEMP/lychee/lychee-x86_64-unknown-linux-gnu" >> "$GITHUB_PATH"
 
       - name: Install cffconvert
         run: pip install cffconvert==2.0.0
