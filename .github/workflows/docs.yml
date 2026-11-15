@@ -2,6 +2,7 @@ name: Docs
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
@@ -10,14 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install lychee
+      - name: Install lychee (outside the workspace)
         run: |
           LYCHEE_VERSION=lychee-v0.24.2
-          curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" | tar xz
-          echo "$GITHUB_WORKSPACE/lychee-x86_64-unknown-linux-gnu" >> "$GITHUB_PATH"
+          mkdir -p "$RUNNER_TEMP/lychee"
+          curl -sSfL "https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar xz -C "$RUNNER_TEMP/lychee"
+          echo "$RUNNER_TEMP/lychee" >> "$GITHUB_PATH"
 
       - name: Install cffconvert
-        run: pip install cffconvert
+        run: pip install cffconvert==2.0.0
 
       - name: Validate CITATION.cff
         run: cffconvert --validate -i CITATION.cff
