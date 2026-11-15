@@ -132,8 +132,8 @@ Exact warehouse table names belong in a release appendix, not in this living dra
 
 ## 5. v0 freeze checklist
 
-- [ ] Confirm grain: host × client (this draft) vs page × client
-- [ ] Confirm Lite cutoff on `rank` after null-rate check
+- [x] Confirm grain: host × client (settled for v0)
+- [ ] Confirm Lite cutoff on `rank` (null-rate check complete; cutoff `N` not chosen yet)
 - [ ] Freeze P0 column list for first delivery
 - [ ] CSS columns: same table or sibling file
 - [ ] Family columns: include / cap / omit in Lite
